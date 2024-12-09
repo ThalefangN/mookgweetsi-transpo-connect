@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { motion } from "framer-motion";
-import { Search, Car, CreditCard, Truck, Road, AlertTriangle, QrCode, Home, Settings, Bell, User } from "lucide-react";
+import { Search, Car, CreditCard, Truck, MapPin, AlertTriangle, QrCode, HomeIcon, Settings, Bell, User } from "lucide-react";
 import ServiceCard from "@/components/ServiceCard";
 import BottomNav from "@/components/BottomNav";
 
@@ -25,7 +25,7 @@ const Home = () => {
     {
       title: "Road Tax Payments",
       description: "Pay road taxes and fees online quickly and easily",
-      icon: Road,
+      icon: MapPin,
     },
     {
       title: "Report an Issue",
