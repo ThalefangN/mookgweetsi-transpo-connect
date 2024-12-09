@@ -4,38 +4,47 @@ import { motion } from "framer-motion";
 import { Search, Car, CreditCard, Truck, MapPin, AlertTriangle, QrCode, HomeIcon, Settings, Bell, User } from "lucide-react";
 import ServiceCard from "@/components/ServiceCard";
 import BottomNav from "@/components/BottomNav";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
+  
   const services = [
     {
       title: "Driving License Services",
       description: "Learn more about driving license exam bookings and payments",
       icon: Car,
+      path: "/driving-services"
     },
     {
       title: "Permit & License Payments",
       description: "Pay for driving licenses and permits with ease",
       icon: CreditCard,
+      path: "/permits"
     },
     {
       title: "Vehicle Registration",
       description: "Register or renew your vehicle in a few simple steps",
       icon: Truck,
+      path: "/vehicle-registration"
     },
     {
       title: "Road Tax Payments",
       description: "Pay road taxes and fees online quickly and easily",
       icon: MapPin,
+      path: "/road-tax"
     },
     {
       title: "Report an Issue",
       description: "Report issues like road accidents, traffic violations, etc",
       icon: AlertTriangle,
+      path: "/report-issue"
     },
     {
       title: "Digital Identity / QR Code",
       description: "Access your transport-related documents and digital ID",
       icon: QrCode,
+      path: "/digital-id"
     },
   ];
 
@@ -51,7 +60,7 @@ const Home = () => {
             <h1 className="text-2xl font-bold">Welcome, User!</h1>
             <p className="text-muted-foreground">What would you like to do today?</p>
           </div>
-          <Button size="icon" variant="ghost">
+          <Button size="icon" variant="ghost" onClick={() => navigate("/profile")}>
             <User className="h-6 w-6" />
           </Button>
         </motion.div>
@@ -68,6 +77,7 @@ const Home = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
+              onClick={() => navigate(service.path)}
             >
               <ServiceCard {...service} />
             </motion.div>
