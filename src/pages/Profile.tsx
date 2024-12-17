@@ -46,10 +46,13 @@ const Profile = () => {
           animate={{ opacity: 1, y: 0 }}
           className="flex flex-col items-center space-y-4"
         >
-          <Avatar className="h-24 w-24">
-            <AvatarImage src="https://github.com/shadcn.png" />
-            <AvatarFallback>CN</AvatarFallback>
-          </Avatar>
+          <div className="w-32 h-32 rounded-full overflow-hidden shadow-lg">
+            <img 
+              src="/lovable-uploads/04a82aff-8866-46b3-8b9e-db900997493c.png"
+              alt="Profile"
+              className="w-full h-full object-cover"
+            />
+          </div>
           <div className="text-center">
             <h2 className="text-xl font-semibold">John Doe</h2>
             <p className="text-muted-foreground">ID: 123456789</p>

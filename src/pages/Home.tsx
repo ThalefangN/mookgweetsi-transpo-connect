@@ -54,15 +54,25 @@ const Home = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="flex items-center justify-between"
+          className="space-y-4"
         >
-          <div>
-            <h1 className="text-2xl font-bold">Welcome, User!</h1>
-            <p className="text-muted-foreground">What would you like to do today?</p>
+          <div className="flex items-center justify-between">
+            <div>
+              <h1 className="text-2xl font-bold">Welcome, User!</h1>
+              <p className="text-muted-foreground">What would you like to do today?</p>
+            </div>
+            <Button size="icon" variant="ghost" onClick={() => navigate("/profile")}>
+              <User className="h-6 w-6" />
+            </Button>
           </div>
-          <Button size="icon" variant="ghost" onClick={() => navigate("/profile")}>
-            <User className="h-6 w-6" />
-          </Button>
+
+          <div className="rounded-xl overflow-hidden shadow-lg h-48 mb-6">
+            <img 
+              src="/lovable-uploads/04a82aff-8866-46b3-8b9e-db900997493c.png"
+              alt="Welcome Banner"
+              className="w-full h-full object-cover"
+            />
+          </div>
         </motion.div>
 
         <div className="relative">
