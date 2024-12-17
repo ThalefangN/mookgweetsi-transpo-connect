@@ -1,14 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Mail, Lock, Facebook } from "lucide-react";
 
 const SignIn = () => {
+  const navigate = useNavigate();
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle sign in logic here
+    navigate("/home");
   };
 
   return (
@@ -21,7 +23,7 @@ const SignIn = () => {
       >
         <div className="text-center">
           <h1 className="text-2xl font-bold">Welcome Back</h1>
-          <p className="text-muted-foreground mt-2">Sign in to Mookgweetsi</p>
+          <p className="text-muted-foreground mt-2">Sign in to your account</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -35,15 +37,7 @@ const SignIn = () => {
             </div>
 
             <div className="space-y-2">
-              <div className="flex items-center justify-between">
-                <Label htmlFor="password">Password</Label>
-                <Link
-                  to="/forgot-password"
-                  className="text-sm font-medium text-primary hover:underline"
-                >
-                  Forgot password?
-                </Link>
-              </div>
+              <Label htmlFor="password">Password</Label>
               <div className="relative">
                 <Lock className="absolute left-3 top-3 h-5 w-5 text-muted-foreground" />
                 <Input id="password" type="password" placeholder="Enter password" className="pl-10" />

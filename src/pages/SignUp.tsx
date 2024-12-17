@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { User, Mail, Lock, Phone, Facebook } from "lucide-react";
 import PhoneInput from "@/components/PhoneInput";
@@ -11,10 +11,11 @@ import { useState } from "react";
 const SignUp = () => {
   const [phone, setPhone] = useState("");
   const [agreed, setAgreed] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle sign up logic here
+    navigate("/home");
   };
 
   return (
