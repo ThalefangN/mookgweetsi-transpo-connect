@@ -68,8 +68,8 @@ const Home = () => {
 
           <div className="rounded-xl overflow-hidden shadow-lg h-48 mb-6">
             <img 
-              src="/lovable-uploads/04a82aff-8866-46b3-8b9e-db900997493c.png"
-              alt="Welcome Banner"
+              src="/lovable-uploads/f60feeb4-2197-4855-85de-e9d62be5076c.png"
+              alt="Botswana Flag"
               className="w-full h-full object-cover"
             />
           </div>
