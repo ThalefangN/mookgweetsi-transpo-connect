@@ -20,8 +20,8 @@ const GetStarted = () => {
         
         <div className="relative h-64 w-full rounded-2xl overflow-hidden">
           <img
-            src="/transport-services.jpg"
-            alt="Transport Services"
+            src="/lovable-uploads/b1fdcda0-68c0-4b78-9a71-bbebb1ab0560.png"
+            alt="Botswana Flag"
             className="object-cover w-full h-full"
           />
         </div>
@@ -34,6 +34,10 @@ const GetStarted = () => {
             <Link to="/signin">Sign In</Link>
           </Button>
         </div>
+
+        <p className="text-sm text-muted-foreground">
+          By continuing, you agree to our Terms of Service and Privacy Policy
+        </p>
       </motion.div>
     </div>
   );

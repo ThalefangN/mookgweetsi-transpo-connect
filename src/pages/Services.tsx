@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import { ArrowLeft, Car, CreditCard, Truck, MapPin, AlertTriangle, QrCode } from "lucide-react";
+import { ArrowLeft, Car, CreditCard, Truck, AlertTriangle, QrCode } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import BottomNav from "@/components/BottomNav";
-import ServiceCard from "@/components/ServiceCard";
+import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 
 const Services = () => {
   const navigate = useNavigate();
@@ -28,12 +28,6 @@ const Services = () => {
       path: "/vehicle-registration"
     },
     {
-      title: "Road Tax Payments",
-      description: "Pay road taxes and fees online quickly and easily",
-      icon: MapPin,
-      path: "/road-tax"
-    },
-    {
       title: "Report an Issue",
       description: "Report issues like road accidents, traffic violations, etc",
       icon: AlertTriangle,
@@ -44,7 +38,7 @@ const Services = () => {
       description: "Access your transport-related documents and digital ID",
       icon: QrCode,
       path: "/digital-id"
-    },
+    }
   ];
 
   return (
@@ -61,7 +55,7 @@ const Services = () => {
           <h1 className="text-2xl font-bold">Services</h1>
         </motion.div>
 
-        <div className="grid gap-4">
+        <div className="space-y-4">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -70,7 +64,17 @@ const Services = () => {
               transition={{ delay: index * 0.1 }}
               onClick={() => navigate(service.path)}
             >
-              <ServiceCard {...service} />
+              <Card className="cursor-pointer hover:bg-accent transition-colors">
+                <CardHeader className="flex flex-row items-start space-x-4">
+                  <div className="p-2 rounded-full bg-primary/10 text-primary">
+                    <service.icon className="h-5 w-5" />
+                  </div>
+                  <div className="space-y-1">
+                    <CardTitle>{service.title}</CardTitle>
+                    <CardDescription>{service.description}</CardDescription>
+                  </div>
+                </CardHeader>
+              </Card>
             </motion.div>
           ))}
         </div>
