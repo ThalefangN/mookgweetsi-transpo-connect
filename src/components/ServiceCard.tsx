@@ -1,43 +1,15 @@
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { LucideIcon } from "lucide-react";
-import { useOfflineDetection } from "@/hooks/useOfflineDetection";
-import { useToast } from "@/hooks/use-toast";
 
 interface ServiceCardProps {
   title: string;
   description: string;
   icon: LucideIcon;
-  onClick?: () => void;
 }
 
-const ServiceCard = ({ title, description, icon: Icon, onClick }: ServiceCardProps) => {
-  const isOffline = useOfflineDetection();
-  const { toast } = useToast();
-
-  const handleClick = () => {
-    console.log('Service card clicked, offline status:', isOffline);
-    
-    if (isOffline) {
-      toast({
-        title: "No Internet Connection",
-        description: "Please connect to the internet to access this service.",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    onClick?.();
-  };
-
+const ServiceCard = ({ title, description, icon: Icon }: ServiceCardProps) => {
   return (
-    <Card 
-      className={`transition-colors ${
-        isOffline 
-          ? 'opacity-50 cursor-not-allowed' 
-          : 'hover:bg-accent cursor-pointer'
-      }`}
-      onClick={handleClick}
-    >
+    <Card className="hover:bg-accent transition-colors cursor-pointer">
       <CardHeader>
         <div className="flex items-start space-x-4">
           <div className="bg-primary/10 p-3 rounded-lg">
