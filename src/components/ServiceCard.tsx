@@ -31,7 +31,11 @@ const ServiceCard = ({ title, description, icon: Icon, onClick }: ServiceCardPro
 
   return (
     <Card 
-      className={`hover:bg-accent transition-colors cursor-pointer ${isOffline ? 'opacity-75' : ''}`}
+      className={`transition-colors ${
+        isOffline 
+          ? 'opacity-50 cursor-not-allowed' 
+          : 'hover:bg-accent cursor-pointer'
+      }`}
       onClick={handleClick}
     >
       <CardHeader>
