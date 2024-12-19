@@ -26,7 +26,9 @@ const ServiceCard = ({ title, description, icon: Icon, onClick }: ServiceCardPro
       return;
     }
 
-    onClick?.();
+    if (onClick) {
+      onClick();
+    }
   };
 
   return (
